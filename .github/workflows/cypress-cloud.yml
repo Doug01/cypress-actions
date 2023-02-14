@@ -6,6 +6,7 @@ on:
       spec:
         description: Run by cypress command line
         default: cypress/e2e/*
+        
 jobs:
   cypress-e2e-electron:
     runs-on: ubuntu-latest
@@ -16,7 +17,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5.0.9
         with:
-          insatall-command: yarn install
+          install-command: yarn install
           browser: electron
           record: true
           group: UI Electron
@@ -24,4 +25,9 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: d4288d9d-11c3-4bb1-9dba-5af9df402788
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+          
+      
+        
+        
         
